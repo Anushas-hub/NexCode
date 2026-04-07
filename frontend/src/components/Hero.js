@@ -5,14 +5,22 @@ import "./../styles/Hero.css";
 function Hero() {
   return (
     <section className="hero">
+
+      {/* 🔥 NEW MAIN TITLE */}
       <motion.h1 
+        className="main-title"
         initial={{ opacity: 0, y: -40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
-        The best place for <span>&lt;PROGRAMMERS/&gt;</span> <br />
-        to build front-end code
+        Build Faster with <span>Nexcode</span>
       </motion.h1>
+
+      {/* 💡 SUBTITLE */}
+      <p className="subtitle">
+        Elevate your workflow. Code smarter. Ship faster.
+      </p>
+
 
       <p className="explore">Explore Nexcode →</p>
 
@@ -24,14 +32,16 @@ function Hero() {
           <p>✔ Customizable editor</p>
         </div>
 
+        {/* ❌ FIXED IMAGE ISSUE */}
         <motion.div 
           className="right"
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
         >
-          <img src="https://via.placeholder.com/500x300" alt="editor" />
+          <img src="/editor.png" alt="editor" />
         </motion.div>
       </div>
+
     </section>
   );
 }

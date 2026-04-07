@@ -30,3 +30,35 @@
 .right img {
   border-radius: 12px;
 }
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+  background: linear-gradient(to right, #0a0f1c, #10172a);
+  color: white;
+}
+
+.hero span {
+  color: #a3ff12;
+}
+
+.explore {
+  margin-top: 20px;
+  color: #a3ff12;
+  cursor: pointer;
+}
+
+.hero-container {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-top: 50px;
+  flex-wrap: wrap;
+}
+
+.left {
+  text-align: left;
+}
+
+.right img {
+  border-radius: 12px;
+}
