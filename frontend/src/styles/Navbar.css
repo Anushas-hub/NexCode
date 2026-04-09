@@ -1,49 +1,93 @@
+/* 🔥 NAVBAR CONTAINER */
 .navbar {
   display: flex;
   justify-content: space-between;
-  padding: 20px 60px;
-  background: #0a0f1c;
+  align-items: center;
+  padding: 20px 80px; /* 🔥 more spacing */
+  background: #0B0E14;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
   color: white;
-  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-.logo {
+/* 🔗 NAV LINKS */
+.nav-links {
   display: flex;
+  gap: 40px; /* 🔥 more breathing space */
+  list-style: none;
   align-items: center;
-  gap: 10px;
 }
 
-.logo img {
-  height: 38px;
-  width: 38px;
-  object-fit: cover;
-  border-radius: 6px;
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px; /* 🔥 slightly refined */
+  transition: 0.3s;
 }
 
-.logo span {
-  font-size: 20px;
-  font-weight: 600;
+.nav-links a:hover {
   color: #a3ff12;
 }
 
-.nav-links {
+/* 🔥 LOGO */
+.logo {
   display: flex;
-  gap: 30px;
-  list-style: none;
-}
-
-.nav-links li {
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
   cursor: pointer;
 }
 
+.logo img {
+  height: 42px; /* 🔥 slightly bigger */
+  width: 42px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.logo span {
+  font-size: 24px; /* 🔥 bigger Nexcode text */
+  font-weight: 700;
+  color: #a3ff12;
+}
+
+/* 🔥 BUTTON CONTAINER */
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* 🔥 COMMON BUTTON STYLE */
 .buttons button {
-  margin-left: 10px;
-  padding: 8px 16px;
-  border-radius: 6px;
+  padding: 10px 22px; /* 🔥 bigger buttons */
+  border-radius: 12px;
   border: none;
+  font-size: 15px;
+  font-weight: 600;
   cursor: pointer;
+  transition: 0.3s ease;
 }
 
+/* 🔘 LOGIN BUTTON */
+.login {
+  background: #e9ebee;
+  color: rgb(14, 0, 0);
+}
+
+.login:hover {
+  background: #374151;
+}
+
+/* 🟢 SIGNUP BUTTON */
 .signup {
   background: #a3ff12;
+  color: black;
+}
+
+.signup:hover {
+  background: #c7ff4d;
+  box-shadow: 0 0 10px rgba(163,255,18,0.5);
 }

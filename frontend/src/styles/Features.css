@@ -1,26 +1,72 @@
 .features {
-  padding: 80px 20px;
-  background: #0f172a;
-  color: white;
+  padding: 10px 20px 40px; /* 🔥 less top padding */
+  margin-top: -20px;       /* 🔥 pull section UP */
+  background: #0B0E14;
   text-align: center;
+  color: white;
+}
+.features h2 {
+  font-size: 36px;
+  margin-bottom: 50px;
+  color: #C1FF00;
 }
 
+/* 🔥 PERFECT 2 COLUMN LAYOUT */
 .cards {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  margin-top: 40px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* full width divide */
+  gap: 40px;
+  max-width: 1000px;
+  margin: auto;
 }
 
+/* 🔥 RECTANGULAR BIG CARDS */
 .card {
-  background: #1e293b;
-  padding: 30px;
-  border-radius: 10px;
-  width: 220px;
-  transition: 0.3s;
+  position: relative;
+  width: 100%;              /* take full grid width */
+  height: 270px;            /* rectangle shape */
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 3px solid #C1FF00;
+  transition: 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 0 30px rgba(193, 255, 0, 0.4);
+}
+
+/* 🔥 IMAGE FULL COVER PERFECT */
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 🔥 OVERLAY */
+.overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+  text-align: left;
+}
+
+.overlay h3 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.overlay p {
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 700px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
 }

@@ -1,0 +1,42 @@
+.about {
+  padding: 80px 20px;
+  text-align: center;
+  background: #020617;
+  color: white;
+}
+
+.about h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.about-desc {
+  max-width: 700px;
+  margin: 0 auto 40px;
+  color: #9ca3af;
+}
+
+.about-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.about-card {
+  background: #111827;
+  padding: 25px;
+  border-radius: 12px;
+  width: 280px;
+  text-align: left;
+  transition: 0.3s;
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+}
+
+.about-card h3 {
+  color: #a3ff12;
+  margin-bottom: 10px;
+}

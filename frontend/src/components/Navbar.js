@@ -1,19 +1,20 @@
 import React from "react";
 import "./../styles/Navbar.css";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
     <nav className="navbar">
       
-      <div className="logo">
+      <Link to="/" className="logo">
         <img src="/logo.jpeg" alt="Nexcode Logo" />
         <span>Nexcode</span>
-      </div>
+      </Link>
      
       <ul className="nav-links">
-        <li>Features</li>
-        <li>About</li>
-        <li>Contact</li>
+        <li><Link to="/features">Features</Link></li>
+        <li><Link to="/about">About</Link></li>
+        <li><Link to="/contact">Contact</Link></li>
       </ul>
 
       <div className="buttons">

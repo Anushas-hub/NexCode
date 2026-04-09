@@ -6,7 +6,7 @@ function Hero() {
   return (
     <section className="hero">
 
-      {/* 🔥 NEW MAIN TITLE */}
+      {/* 🔥 BIG TITLE */}
       <motion.h1 
         className="main-title"
         initial={{ opacity: 0, y: -40 }}
@@ -17,33 +17,27 @@ function Hero() {
       </motion.h1>
 
       {/* 💡 SUBTITLE */}
-      <p className="subtitle">
-        Elevate your workflow. Code smarter. Ship faster.
-      </p>
+      <motion.p 
+        className="subtitle"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.5 }}
+      >
+        Elevate your workflow with a powerful coding platform
+      </motion.p>
 
-
-      <p className="explore">Explore Nexcode →</p>
-
-      <div className="hero-container">
-        <div className="left">
-          <p>✔ Build entire projects</p>
-          <p>✔ Live collaboration</p>
-          <p>✔ Syntax highlighting</p>
-          <p>✔ Customizable editor</p>
-        </div>
-
-        {/* ❌ FIXED IMAGE ISSUE */}
-        <motion.div 
-          className="right"
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
-        >
-          <img src="/editor.png" alt="editor" />
-        </motion.div>
-      </div>
+      {/* 🚀 CTA BUTTON */}
+      <motion.button
+        className="hero-btn"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.8 }}
+      >
+        Explore Nexcode
+      </motion.button>
 
     </section>
   );
 }
 
-export default Hero;
+export default Hero;  
