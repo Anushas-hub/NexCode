@@ -48,10 +48,20 @@
 /* 🔥 TERMS */
 .terms {
   display: flex;
-  gap: 10px;
+  align-items: center;   /* 🔥 vertically align */
+  gap: 8px;              /* 🔥 space kam kar diya */
   font-size: 13px;
   color: #9ca3af;
   margin-bottom: 15px;
+  justify-content: flex-start; /* 🔥 left align */
+}
+.terms input {
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+}
+.terms span {
+  line-height: 1.2;
 }
 
 /* 🔥 BUTTON */
