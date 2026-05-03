@@ -1,24 +1,49 @@
 import React from "react";
 import "./../styles/Navbar.css";
-import { Link, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 function Navbar() {
-  const navigate = useNavigate(); // ✅ yahan likhna hota hai (function ke andar)
+  const navigate = useNavigate();
 
   return (
     <nav className="navbar">
       
       {/* LOGO */}
-      <Link to="/" className="logo">
+      <NavLink to="/" className="logo">
         <img src="/logo.jpeg" alt="Nexcode Logo" />
         <span>Nexcode</span>
-      </Link>
+      </NavLink>
      
       {/* NAV LINKS */}
       <ul className="nav-links">
-        <li><Link to="/features">Features</Link></li>
-        <li><Link to="/about">About</Link></li>
-        <li><Link to="/contact">Contact</Link></li>
+
+        <li>
+          <NavLink 
+            to="/download" 
+            className={({ isActive }) => isActive ? "active-link" : ""}
+          >
+            Download
+          </NavLink>
+        </li>
+
+        <li>
+          <NavLink 
+            to="/about" 
+            className={({ isActive }) => isActive ? "active-link" : ""}
+          >
+            About
+          </NavLink>
+        </li>
+
+        <li>
+          <NavLink 
+            to="/contact" 
+            className={({ isActive }) => isActive ? "active-link" : ""}
+          >
+            Contact
+          </NavLink>
+        </li>
+
       </ul>
 
       {/* BUTTONS */}

@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import "./../styles/Signup.css";
+import "./../styles/Login.css";
 import { useNavigate } from "react-router-dom";
 
-function SignupPage() {
+function LoginPage() {
   const navigate = useNavigate();
 
   const [form, setForm] = useState({
-    username: "",
     email: "",
     password: ""
   });
@@ -15,9 +14,9 @@ function SignupPage() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSignup = async () => {
+  const handleLogin = async () => {
     try {
-      const res = await fetch("http://127.0.0.1:8000/api/signup/", {
+      const res = await fetch("http://127.0.0.1:8000/api/login/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -27,11 +26,11 @@ function SignupPage() {
 
       const data = await res.json();
 
-      if (res.status === 201) {
-        alert("Signup successful");
-        navigate("/login");
+      if (res.status === 200) {
+        alert("Login successful");
+        navigate("/");
       } else {
-        alert(data.error || "Signup failed");
+        alert(data.error || "Login failed");
       }
 
     } catch (err) {
@@ -41,17 +40,11 @@ function SignupPage() {
   };
 
   return (
-    <div className="signup-container">
+    <div className="login-container">
 
-      <h1>Sign <span>Up</span></h1>
+      <h1>Log <span>In</span></h1>
 
-      <div className="signup-box">
-
-        <input
-          name="username"
-          placeholder="Username"
-          onChange={handleChange}
-        />
+      <div className="login-box">
 
         <input
           name="email"
@@ -66,13 +59,13 @@ function SignupPage() {
           onChange={handleChange}
         />
 
-        <button className="create-btn" onClick={handleSignup}>
-          Create Account
+        <button className="login-btn" onClick={handleLogin}>
+          Log In
         </button>
 
-        <p className="login-text">
-          Already have an account?
-          <span onClick={() => navigate("/login")}> Log in</span>
+        <p className="signup-text">
+          Don’t have an account?
+          <span onClick={() => navigate("/signup")}> Sign up</span>
         </p>
 
       </div>
@@ -80,4 +73,4 @@ function SignupPage() {
   );
 }
 
-export default SignupPage;
+export default LoginPage;

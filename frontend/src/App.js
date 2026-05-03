@@ -4,11 +4,12 @@ import Navbar from "./components/Navbar";
 import SignupNavbar from "./components/SignupNavbar";
 import Hero from "./components/Hero";
 import Features from "./components/Features";
-import FeaturesPage from "./pages/FeaturesPage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import SignupPage from "./pages/SignupPage";
 import Footer from "./components/Footer";
+import LoginPage from "./pages/LoginPage";
+import DownloadPage from "./pages/DownloadPage";
 
 /* 🔥 Navbar Controller */
 function Layout() {
@@ -29,7 +30,8 @@ function Layout() {
         } />
 
         {/* OTHER PAGES */}
-        <Route path="/features" element={<FeaturesPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/download" element={<DownloadPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
 

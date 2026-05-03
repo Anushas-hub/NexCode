@@ -91,3 +91,31 @@
   background: #c7ff4d;
   box-shadow: 0 0 10px rgba(163,255,18,0.5);
 }
+
+/* ✅ ACTIVE LINK (CURRENT PAGE) */
+.active-link {
+  color: #a3ff12 !important;
+  font-weight: 600;
+  position: relative;
+}
+
+/* ✨ Underline glow effect */
+.active-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background: #a3ff12;
+  box-shadow: 0 0 8px #a3ff12;
+}
+
+/* 🔥 smoother hover */
+.nav-links a {
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: #a3ff12;
+}

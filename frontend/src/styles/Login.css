@@ -1,0 +1,89 @@
+.login-container {
+  text-align: center;
+  padding: 40px 20px;
+  color: white;
+}
+
+.login-container h1 {
+  font-size: 42px;
+}
+
+.login-container span {
+  color: #a3ff12;
+}
+
+.subtitle {
+  color: #9ca3af;
+  margin-bottom: 30px;
+}
+
+/* BOX */
+.login-box {
+  background: #0B0E14;
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 30px;
+  border-radius: 15px;
+  width: 400px;
+  margin: auto;
+}
+
+/* INPUTS */
+.login-box input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 1px solid #374151;
+  background: #020617;
+  color: white;
+}
+
+/* EXTRA */
+.extra {
+  text-align: right;
+  font-size: 13px;
+  color: #9ca3af;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+/* BUTTON */
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  background: #a3ff12;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* DIVIDER */
+.divider {
+  margin: 15px 0;
+  color: #6b7280;
+}
+
+/* SOCIAL */
+.google-btn,
+.github-btn {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: 1px solid #374151;
+  background: #020617;
+  color: white;
+  cursor: pointer;
+}
+
+/* SIGNUP TEXT */
+.signup-text {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.signup-text span {
+  color: #a3ff12;
+  cursor: pointer;
+}

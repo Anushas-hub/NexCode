@@ -17,3 +17,31 @@ body {
   padding: 0;
   background: #0a0f1c; /* 🔥 same as navbar */
 }
+
+:root {
+  --primary: #a3ff12;
+  --bg-dark: #020617;
+  --card-bg: rgba(11, 14, 20, 0.6);
+  --border: rgba(255, 255, 255, 0.08);
+}
+
+/* 🔥 smooth font rendering */
+body {
+  background: radial-gradient(circle at top, #071029, #020617 60%);
+  font-family: 'Inter', sans-serif;
+}
+
+/* 🔥 reusable glass */
+.glass {
+  background: var(--card-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+
+/* 🔥 glow effect */
+.glow:hover {
+  box-shadow: 0 0 25px rgba(163,255,18,0.15);
+  border-color: var(--primary);
+}

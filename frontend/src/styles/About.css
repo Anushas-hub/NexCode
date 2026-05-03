@@ -1,42 +1,79 @@
 .about {
-  padding: 80px 20px;
-  text-align: center;
-  background: #020617;
+  padding: 120px 20px;
   color: white;
+  text-align: center;
+  min-height: 100vh;
 }
 
-.about h2 {
-  font-size: 32px;
-  margin-bottom: 20px;
+/* HERO */
+.about-hero h1 {
+  font-size: 52px;
+  margin-bottom: 15px;
 }
 
-.about-desc {
-  max-width: 700px;
-  margin: 0 auto 40px;
+.about-hero span {
+  color: var(--primary);
+  text-shadow: 0 0 15px rgba(163,255,18,0.4);
+}
+
+.about-hero p {
   color: #9ca3af;
+  max-width: 700px;
+  margin: auto;
 }
 
-.about-cards {
-  display: flex;
-  justify-content: center;
+/* GRID */
+.about-grid {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 🔥 FORCE 2 PER ROW */
   gap: 30px;
-  flex-wrap: wrap;
+  max-width: 900px; /* 🔥 tighter = more premium */
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.about-card {
-  background: #111827;
-  padding: 25px;
-  border-radius: 12px;
-  width: 280px;
+/* GLASS CARD */
+.about-box {
+  padding: 30px;
   text-align: left;
   transition: 0.3s;
 }
 
-.about-card:hover {
-  transform: translateY(-5px);
+.about-box h3 {
+  color: var(--primary);
+  margin-bottom: 10px;
 }
 
-.about-card h3 {
-  color: #a3ff12;
-  margin-bottom: 10px;
+.about-box p {
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+/* APPLY GLASS */
+.about-box {
+  background: rgba(11, 14, 20, 0.55);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+}
+
+.about-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 30px rgba(163,255,18,0.12);
+  border-color: var(--primary);
+}
+
+/* EXTRA SECTION */
+.about-highlight {
+  margin-top: 90px;
+}
+
+.about-highlight h2 {
+  font-size: 30px;
+  color: var(--primary);
+}
+
+.about-highlight p {
+  color: #9ca3af;
 }

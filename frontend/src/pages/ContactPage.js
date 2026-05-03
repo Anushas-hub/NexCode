@@ -1,17 +1,51 @@
 import React from "react";
+import "./../styles/Contact.css";
 
-function ContactPage() {
+function Contact() {
   return (
-    <div style={{ padding: "80px", background: "#020617", color: "white" }}>
-      <h1>Contact Us</h1>
+    <section className="contact">
 
-      <input placeholder="Name" /><br /><br />
-      <input placeholder="Email" /><br /><br />
-      <textarea placeholder="Message"></textarea><br /><br />
+      {/* HERO */}
+      <div className="contact-hero">
+        <h1>
+          Get in <span>Touch</span>
+        </h1>
+        <p>
+          Have an idea, feedback, or question? We'd love to hear from you.
+        </p>
+      </div>
 
-      <button>Send</button>
-    </div>
+      {/* MAIN WRAPPER */}
+      <div className="contact-container">
+
+        {/* FORM */}
+        <form className="contact-form">
+          <h3>Send a Message</h3>
+
+          <input type="text" placeholder="Your Name" />
+          <input type="email" placeholder="Your Email" />
+          <textarea placeholder="Your Message"></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
+
+        {/* SIDE INFO */}
+        <div className="contact-info">
+          <h3>Contact Info</h3>
+
+          <p>📧 nexcode.team@gmail.com</p>
+          <p>🌍 India</p>
+          <p>⏱ Reply within 24 hours</p>
+
+          <div className="contact-note">
+            We usually respond quickly. Your feedback helps us improve Nexcode.
+          </div>
+        </div>
+
+      </div>
+
+    </section>
   );
 }
 
-export default ContactPage;
+export default Contact;

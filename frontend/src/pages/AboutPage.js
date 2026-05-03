@@ -1,24 +1,65 @@
 import React from "react";
+import "./../styles/About.css";
 
-function AboutPage() {
+function About() {
   return (
-    <div style={{ padding: "80px", background: "#020617", color: "white" }}>
-      <h1>About Nexcode</h1>
+    <section className="about">
 
-      <p>
-        Nexcode is built using React.js, Django, and SQLite to deliver a fast,
-        scalable, and reliable coding platform.
-      </p>
+      {/* HERO */}
+      <div className="about-hero">
+        <h1>
+          About <span>Nexcode</span>
+        </h1>
+        <p>
+          Nexcode is designed to redefine how developers write, test, and collaborate on code —
+          combining performance, simplicity, and intelligent workflows into one seamless experience.
+        </p>
+      </div>
 
-      <p>
-        Security is a priority, with safe authentication and protected data handling.
-      </p>
+      {/* FEATURES GRID */}
+      <div className="about-grid">
 
-      <p>
-        Built by two passionate developers, Nexcode represents innovation and teamwork.
-      </p>
-    </div>
+        <div className="about-box">
+          <h3>⚡ Blazing Fast</h3>
+          <p>
+            Optimized architecture ensures smooth performance even in large-scale projects.
+          </p>
+        </div>
+
+        <div className="about-box">
+          <h3>🧠 Developer Focused</h3>
+          <p>
+            Clean UI and minimal distractions so you can stay focused on building great software.
+          </p>
+        </div>
+
+        <div className="about-box">
+          <h3>🔐 Secure</h3>
+          <p>
+            Built with secure APIs, authentication layers, and data protection practices.
+          </p>
+        </div>
+
+        <div className="about-box">
+          <h3>🤝 Collaboration</h3>
+          <p>
+            Real-time teamwork features to build faster and smarter together.
+          </p>
+        </div>
+
+      </div>
+
+      {/* EXTRA SECTION (NEW 🔥) */}
+      <div className="about-highlight">
+        <h2>Why Nexcode?</h2>
+        <p>
+          Because developers deserve tools that feel fast, intuitive, and powerful —
+          without unnecessary complexity.
+        </p>
+      </div>
+
+    </section>
   );
 }
 
-export default AboutPage;
+export default About;
