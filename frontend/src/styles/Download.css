@@ -1,39 +1,45 @@
 .download-page {
   color: white;
   text-align: center;
+  /* Ensures padding doesn't affect width calculation */
+  box-sizing: border-box; 
+}
+
+.download-page * {
+  box-sizing: border-box;
 }
 
 /* HERO */
 .download-hero {
-  padding: 120px 20px;
+  padding: 80px 20px;
   background: linear-gradient(135deg, #0B0E14, #111827);
 }
 
 .download-hero h1 {
-  font-size: 52px;
-  margin-bottom: 20px;
+  font-size: 48px;
+  margin-bottom: 16px;
   color: #a3ff12;
 }
 
 .download-hero p {
-  font-size: 18px;
+  font-size: 17px;
   color: #ccc;
-  max-width: 600px;
+  max-width: 550px;
   margin: auto;
 }
 
 /* BUTTON */
 .download-btn {
-  margin-top: 30px;
-  padding: 14px 28px;
-  font-size: 16px;
-  border-radius: 12px;
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 15px;
+  border-radius: 10px;
   border: none;
   background: #a3ff12;
   color: black;
   font-weight: 600;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
 .download-btn:hover {
@@ -43,42 +49,81 @@
 
 /* PREVIEW */
 .preview {
-  padding: 60px 20px;
+  padding: 30px 20px 10px;
 }
 
 .preview img {
   width: 80%;
   max-width: 900px;
-  border-radius: 15px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+  border-radius: 14px;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.5);
 }
 
-/* WHY SECTION */
-.why {
-  padding: 80px 20px;
+/* WHAT'S DIFFERENT */
+.different {
+  padding: 60px 20px;
+  background: #020617;
 }
 
-.why h2 {
-  margin-bottom: 40px;
+.different h2 {
   font-size: 32px;
+  margin-bottom: 40px;
+  color: #a3ff12;
 }
 
-.why-cards {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
+/* GRID - FIXED SPACING */
+.different-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px; /* Increased gap for better visual separation */
+  width: 90%;
+  max-width: 1000px; 
+  margin: 0 auto;
+  align-items: stretch; /* Ensures cards in the same row have same height */
 }
 
-.why-card {
+/* MOBILE */
+@media (max-width: 768px) {
+  .different-cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+/* CARD */
+.different-card {
   background: #111827;
+  border: 1px solid rgba(255,255,255,0.05);
   padding: 30px;
-  border-radius: 12px;
-  width: 220px;
-  transition: 0.3s;
+  border-radius: 16px;
+  text-align: left;
+  transition: 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
-.why-card:hover {
-  transform: translateY(-8px);
+.different-card h3 {
+  color: #a3ff12;
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+
+.different-card p {
+  color: #9ca3af;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.different-card:hover {
+  transform: translateY(-6px);
   background: #1f2937;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+  border-color: rgba(163,255,18,0.2);
+}
+
+/* REMOVE EXTRA SPACE BEFORE FOOTER */
+.download-page > section:last-child {
+  margin-bottom: 0;
+  padding-bottom: 60px;
 }
