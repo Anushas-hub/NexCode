@@ -30,7 +30,7 @@ function DownloadPage() {
         <div className="different-cards">
 
           <div className="different-card">
-            <h3>📊 Smart Dashboard</h3>
+            <h3>Smart Dashboard</h3>
             <p>
               Manage your projects, track progress, and access recent
               work instantly from a powerful built-in dashboard.
@@ -38,7 +38,7 @@ function DownloadPage() {
           </div>
 
           <div className="different-card">
-            <h3>🤖 Built-in Download Agent</h3>
+            <h3>Built-in Download Agent</h3>
             <p>
               Nexcode comes with an integrated guidance agent —
               a smart assistant that helps you set up, configure,
@@ -47,7 +47,7 @@ function DownloadPage() {
           </div>
 
           <div className="different-card">
-            <h3>🌐 Browser Storage</h3>
+            <h3>Browser Storage</h3>
             <p>
               Your files are securely stored directly in your browser,
               allowing quick access and seamless continuation
@@ -56,7 +56,7 @@ function DownloadPage() {
           </div>
 
           <div className="different-card">
-            <h3>⚡ Performance Optimized</h3>
+            <h3>Performance Optimized</h3>
             <p>
               Built with speed in mind — minimal load times,
               responsive UI, and smooth performance even on
