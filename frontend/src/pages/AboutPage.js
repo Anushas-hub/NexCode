@@ -49,13 +49,16 @@ function About() {
 
       </div>
 
-      {/* EXTRA SECTION (NEW 🔥) */}
+      {/* 🔥 UNIQUE SECTION */}
       <div className="about-highlight">
-        <h2>Why Nexcode?</h2>
-        <p>
-          Because developers deserve tools that feel fast, intuitive, and powerful —
-          without unnecessary complexity.
-        </p>
+        <div className="highlight-box">
+          <h2>Not Just Another Editor</h2>
+          <p>
+            Nexcode isn’t built to compete — it’s built to simplify.
+            No bloated features, no unnecessary complexity — just a clean,
+            fast, and focused environment where ideas turn into code instantly.
+          </p>
+        </div>
       </div>
 
     </section>

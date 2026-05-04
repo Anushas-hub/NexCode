@@ -1,8 +1,8 @@
 .download-page {
   color: white;
   text-align: center;
-  /* Ensures padding doesn't affect width calculation */
-  box-sizing: border-box; 
+  box-sizing: border-box;
+  margin-top: 0; /* 🔥 remove accidental spacing */
 }
 
 .download-page * {
@@ -11,8 +11,9 @@
 
 /* HERO */
 .download-hero {
-  padding: 80px 20px;
+  padding: 40px 20px 50px; /* 🔥 TOP reduced from 70px → 40px */
   background: linear-gradient(135deg, #0B0E14, #111827);
+  margin-top: 0; /* 🔥 extra safety */
 }
 
 .download-hero h1 {
@@ -49,7 +50,7 @@
 
 /* PREVIEW */
 .preview {
-  padding: 30px 20px 10px;
+  padding: 20px 20px 20px;
 }
 
 .preview img {
@@ -61,25 +62,25 @@
 
 /* WHAT'S DIFFERENT */
 .different {
-  padding: 60px 20px;
+  padding: 50px 20px 40px;
   background: #020617;
 }
 
 .different h2 {
   font-size: 32px;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   color: #a3ff12;
 }
 
-/* GRID - FIXED SPACING */
+/* GRID */
 .different-cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 30px; /* Increased gap for better visual separation */
+  gap: 25px;
   width: 90%;
-  max-width: 1000px; 
+  max-width: 1000px;
   margin: 0 auto;
-  align-items: stretch; /* Ensures cards in the same row have same height */
+  align-items: stretch;
 }
 
 /* MOBILE */
@@ -94,7 +95,7 @@
 .different-card {
   background: #111827;
   border: 1px solid rgba(255,255,255,0.05);
-  padding: 30px;
+  padding: 25px;
   border-radius: 16px;
   text-align: left;
   transition: 0.3s ease;
@@ -104,7 +105,7 @@
 
 .different-card h3 {
   color: #a3ff12;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   font-size: 18px;
 }
 
@@ -116,14 +117,14 @@
 }
 
 .different-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-5px);
   background: #1f2937;
   box-shadow: 0 12px 30px rgba(0,0,0,0.4);
   border-color: rgba(163,255,18,0.2);
 }
 
-/* REMOVE EXTRA SPACE BEFORE FOOTER */
-.download-page > section:last-child {
+/* FINAL GAP FIX */
+.download-page {
   margin-bottom: 0;
-  padding-bottom: 60px;
+  padding-bottom: 0;
 }

@@ -15,19 +15,26 @@ import DownloadPage from "./pages/DownloadPage";
 function Layout() {
   const location = useLocation();
 
+  const isAuthPage =
+    location.pathname === "/signup" ||
+    location.pathname === "/login";
+
   return (
     <>
-      {/* ✅ SIGNUP PAGE → different navbar */}
-      {location.pathname === "/signup" ? <SignupNavbar /> : <Navbar />}
+      {/* ✅ LOGIN + SIGNUP → same navbar */}
+      {isAuthPage ? <SignupNavbar /> : <Navbar />}
 
       <Routes>
         {/* HOME */}
-        <Route path="/" element={
-          <>
-            <Hero />
-            <Features />
-          </>
-        } />
+        <Route
+          path="/"
+          element={
+            <>
+              <Hero />
+              <Features />
+            </>
+          }
+        />
 
         {/* OTHER PAGES */}
         <Route path="/login" element={<LoginPage />} />
@@ -39,8 +46,8 @@ function Layout() {
         <Route path="/signup" element={<SignupPage />} />
       </Routes>
 
-      {/* ❌ Signup page pe footer hata sakte hain (optional) */}
-      {location.pathname !== "/signup" && <Footer />}
+      {/* ❌ Footer remove for auth pages */}
+      {!isAuthPage && <Footer />}
     </>
   );
 }

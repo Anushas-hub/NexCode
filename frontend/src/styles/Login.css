@@ -87,3 +87,12 @@
   color: #a3ff12;
   cursor: pointer;
 }
+
+.login-container {
+  text-align: center;
+  padding: 40px 20px;
+  color: white;
+
+  /* 🔥 FIX NAVBAR GAP */
+  margin-top: 10px; /* small spacing only */
+}

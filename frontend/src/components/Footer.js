@@ -4,45 +4,43 @@ function Footer() {
   return (
     <footer
       style={{
-        padding: "60px 20px",
+        padding: "35px 20px",
         background: "#020617",
         color: "white",
         textAlign: "center",
+        marginTop: "-10px", // 🔥 THIS FIXES FINAL GAP
       }}
     >
-      {/* 🔥 Brand Name */}
       <h2
         style={{
           color: "#C1FF00",
-          marginBottom: "12px",
-          fontSize: "28px",
+          marginBottom: "10px",
+          fontSize: "24px",
           fontWeight: "700",
         }}
       >
         Nexcode
       </h2>
 
-      {/* 🔥 Tagline */}
       <p
         style={{
           color: "#9ca3af",
-          marginBottom: "25px",
-          fontSize: "18px",
-          fontWeight: "600",
+          marginBottom: "18px",
+          fontSize: "15px",
+          fontWeight: "500",
         }}
       >
         Crafted for developers who build the future.
       </p>
 
-      {/* 🔥 Feature Tags */}
       <div
         style={{
           display: "flex",
           justifyContent: "center",
-          gap: "30px",
-          marginBottom: "25px",
-          fontSize: "16px",
-          fontWeight: "600",
+          gap: "20px",
+          marginBottom: "18px",
+          fontSize: "14px",
+          fontWeight: "500",
           color: "#d1d5db",
           flexWrap: "wrap",
         }}
@@ -53,13 +51,11 @@ function Footer() {
         <span>🚀 Scalable</span>
       </div>
 
-      {/* 🔥 Bottom Line */}
       <div
         style={{
-          borderTop: "1px solid rgba(255,255,255,0.1)",
-          paddingTop: "18px",
-          fontSize: "15px",
-          fontWeight: "600",
+          borderTop: "1px solid rgba(255,255,255,0.08)",
+          paddingTop: "12px",
+          fontSize: "13px",
           color: "#9ca3af",
         }}
       >
