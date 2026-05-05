@@ -37,7 +37,17 @@ function LoginPage() {
 
       if (res.status === 200) {
         alert("Login successful 🚀");
-        navigate("/dashboard");   // ✅ FIXED
+
+        // 🔥 SMART USERNAME HANDLING
+        const existingUsername = localStorage.getItem("username");
+
+        const finalUsername =
+          data.username || existingUsername || "User";
+
+        localStorage.setItem("username", finalUsername);
+        localStorage.setItem("isNewUser", "false");
+
+        navigate("/dashboard");
       } else {
         alert(data.error || "Login failed ❌");
       }
@@ -48,15 +58,6 @@ function LoginPage() {
     }
 
     setLoading(false);
-  };
-
-  // 🔥 SOCIAL LOGIN
-  const handleGoogleLogin = () => {
-    window.location.href = "http://127.0.0.1:8000/auth/google/";
-  };
-
-  const handleGithubLogin = () => {
-    window.location.href = "http://127.0.0.1:8000/auth/github/";
   };
 
   return (
@@ -85,16 +86,6 @@ function LoginPage() {
           disabled={loading}
         >
           {loading ? "Logging in..." : "Log In"}
-        </button>
-
-        <div className="divider">or continue with</div>
-
-        <button className="google-btn" onClick={handleGoogleLogin}>
-          Continue with Google
-        </button>
-
-        <button className="github-btn" onClick={handleGithubLogin}>
-          Continue with GitHub
         </button>
 
         <p className="signup-text">

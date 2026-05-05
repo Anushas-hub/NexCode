@@ -7,7 +7,12 @@ function Sidebar() {
 
   return (
     <div className="sidebar">
-      <h2 className="logo">NexCode</h2>
+
+      {/* 🔥 LOGO WITH ICON */}
+      <div className="sidebar-logo" onClick={() => navigate("/")}>
+        <img src="/logo.jpeg" alt="logo" />
+        <span>Nexcode</span>
+      </div>
 
       <div className="menu">
         <div onClick={() => navigate("/dashboard")}>🏠 Dashboard</div>

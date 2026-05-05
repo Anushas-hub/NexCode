@@ -38,7 +38,12 @@ function SignupPage() {
 
       if (res.status === 201) {
         alert("Signup successful 🚀");
-        navigate("/dashboard");   // ✅ FIXED
+
+        // 🔥 STORE USER DATA
+        localStorage.setItem("username", form.username);
+        localStorage.setItem("isNewUser", "true");
+
+        navigate("/dashboard");
       } else {
         alert(data.error || "Signup failed ❌");
       }
@@ -49,15 +54,6 @@ function SignupPage() {
     }
 
     setLoading(false);
-  };
-
-  // 🔥 SOCIAL SIGNUP
-  const handleGoogleSignup = () => {
-    window.location.href = "http://127.0.0.1:8000/auth/google/";
-  };
-
-  const handleGithubSignup = () => {
-    window.location.href = "http://127.0.0.1:8000/auth/github/";
   };
 
   return (
@@ -92,16 +88,6 @@ function SignupPage() {
           disabled={loading}
         >
           {loading ? "Creating..." : "Create Account"}
-        </button>
-
-        <div className="divider">or continue with</div>
-
-        <button className="google-btn" onClick={handleGoogleSignup}>
-          Continue with Google
-        </button>
-
-        <button className="github-btn" onClick={handleGithubSignup}>
-          Continue with GitHub
         </button>
 
         <p className="login-text">
