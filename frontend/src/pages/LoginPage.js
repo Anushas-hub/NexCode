@@ -10,11 +10,20 @@ function LoginPage() {
     password: ""
   });
 
+  const [loading, setLoading] = useState(false);
+
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const handleLogin = async () => {
+    if (!form.email || !form.password) {
+      alert("All fields are required ⚠️");
+      return;
+    }
+
+    setLoading(true);
+
     try {
       const res = await fetch("http://127.0.0.1:8000/api/login/", {
         method: "POST",
@@ -27,16 +36,27 @@ function LoginPage() {
       const data = await res.json();
 
       if (res.status === 200) {
-        alert("Login successful");
-        navigate("/");
+        alert("Login successful 🚀");
+        navigate("/dashboard");   // ✅ FIXED
       } else {
-        alert(data.error || "Login failed");
+        alert(data.error || "Login failed ❌");
       }
 
     } catch (err) {
       console.error(err);
       alert("Server not reachable ❌");
     }
+
+    setLoading(false);
+  };
+
+  // 🔥 SOCIAL LOGIN
+  const handleGoogleLogin = () => {
+    window.location.href = "http://127.0.0.1:8000/auth/google/";
+  };
+
+  const handleGithubLogin = () => {
+    window.location.href = "http://127.0.0.1:8000/auth/github/";
   };
 
   return (
@@ -59,8 +79,22 @@ function LoginPage() {
           onChange={handleChange}
         />
 
-        <button className="login-btn" onClick={handleLogin}>
-          Log In
+        <button
+          className="login-btn"
+          onClick={handleLogin}
+          disabled={loading}
+        >
+          {loading ? "Logging in..." : "Log In"}
+        </button>
+
+        <div className="divider">or continue with</div>
+
+        <button className="google-btn" onClick={handleGoogleLogin}>
+          Continue with Google
+        </button>
+
+        <button className="github-btn" onClick={handleGithubLogin}>
+          Continue with GitHub
         </button>
 
         <p className="signup-text">

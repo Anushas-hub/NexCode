@@ -11,6 +11,9 @@ import Footer from "./components/Footer";
 import LoginPage from "./pages/LoginPage";
 import DownloadPage from "./pages/DownloadPage";
 
+import DashboardPage from "./pages/DashboardPage";
+import EditorPage from "./pages/EditorPage";
+
 /* 🔥 Navbar Controller */
 function Layout() {
   const location = useLocation();
@@ -19,10 +22,14 @@ function Layout() {
     location.pathname === "/signup" ||
     location.pathname === "/login";
 
+  const isDashboard =
+    location.pathname.startsWith("/dashboard") ||
+    location.pathname.startsWith("/editor");
+
   return (
     <>
-      {/* ✅ LOGIN + SIGNUP → same navbar */}
-      {isAuthPage ? <SignupNavbar /> : <Navbar />}
+      {/* ❌ Hide navbar in dashboard */}
+      {!isDashboard && (isAuthPage ? <SignupNavbar /> : <Navbar />)}
 
       <Routes>
         {/* HOME */}
@@ -36,18 +43,22 @@ function Layout() {
           }
         />
 
-        {/* OTHER PAGES */}
+        {/* AUTH */}
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignupPage />} />
+
+        {/* NORMAL */}
         <Route path="/download" element={<DownloadPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
 
-        {/* SIGNUP */}
-        <Route path="/signup" element={<SignupPage />} />
+        {/* DASHBOARD */}
+        <Route path="/dashboard" element={<DashboardPage />} />
+        <Route path="/editor" element={<EditorPage />} />
       </Routes>
 
-      {/* ❌ Footer remove for auth pages */}
-      {!isAuthPage && <Footer />}
+      {/* ❌ Hide footer in dashboard */}
+      {!isAuthPage && !isDashboard && <Footer />}
     </>
   );
 }

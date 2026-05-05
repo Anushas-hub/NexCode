@@ -19,5 +19,14 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    # your APIs
     path('api/', include('accounts.urls')),
+
+    # 🔥 AUTH ROUTES
+    path('auth/', include('dj_rest_auth.urls')),
+    path('auth/registration/', include('dj_rest_auth.registration.urls')),
+
+    # 🔥 GOOGLE LOGIN
+    path('accounts/', include('allauth.urls')),
 ]
