@@ -14,12 +14,15 @@ function SignupPage() {
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value.trim()
+    });
   };
 
   const handleSignup = async () => {
     if (!form.username || !form.email || !form.password) {
-      alert("All fields are required ⚠️");
+      alert("All fields required ⚠️");
       return;
     }
 
@@ -37,20 +40,15 @@ function SignupPage() {
       const data = await res.json();
 
       if (res.status === 201) {
-        alert("Signup successful 🚀");
-
-        // 🔥 STORE USER DATA
-        localStorage.setItem("username", form.username);
-        localStorage.setItem("isNewUser", "true");
-
+        localStorage.setItem("username", data.username);
         navigate("/dashboard");
       } else {
-        alert(data.error || "Signup failed ❌");
+        alert(data?.username?.[0] || data?.email?.[0] || "Signup failed ❌");
       }
 
     } catch (err) {
       console.error(err);
-      alert("Server not reachable ❌");
+      alert("Server error ❌");
     }
 
     setLoading(false);
@@ -58,7 +56,6 @@ function SignupPage() {
 
   return (
     <div className="signup-container">
-
       <h1>Sign <span>Up</span></h1>
 
       <div className="signup-box">
@@ -83,16 +80,16 @@ function SignupPage() {
         />
 
         <button
-          className="create-btn"
+          className="primary-btn"
           onClick={handleSignup}
           disabled={loading}
         >
           {loading ? "Creating..." : "Create Account"}
         </button>
 
-        <p className="login-text">
+        <p className="switch-text">
           Already have an account?
-          <span onClick={() => navigate("/login")}> Log in</span>
+          <span onClick={() => navigate("/login")}> Login</span>
         </p>
 
       </div>

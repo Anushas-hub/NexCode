@@ -1,98 +1,81 @@
 .login-container {
   text-align: center;
-  padding: 40px 20px;
+  padding: 80px 20px;
   color: white;
+  background: linear-gradient(135deg, #0B0E14, #111827);
+  min-height: 100vh;
 }
 
 .login-container h1 {
-  font-size: 42px;
+  font-size: 48px;
+  margin-bottom: 30px;
 }
 
 .login-container span {
   color: #a3ff12;
 }
 
-.subtitle {
-  color: #9ca3af;
-  margin-bottom: 30px;
-}
-
-/* BOX */
+/* GLASS BOX */
 .login-box {
-  background: #0B0E14;
-  border: 1px solid rgba(255,255,255,0.1);
-  padding: 30px;
-  border-radius: 15px;
-  width: 400px;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(163, 255, 18, 0.2);
+  padding: 40px;
+  border-radius: 18px;
+  width: 420px;
   margin: auto;
+  box-shadow: 0 0 40px rgba(163,255,18,0.05);
 }
 
 /* INPUTS */
 .login-box input {
   width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
-  border-radius: 10px;
-  border: 1px solid #374151;
+  padding: 14px;
+  margin-bottom: 18px;
+  border-radius: 12px;
+  border: 1px solid #1f2937;
   background: #020617;
   color: white;
+  transition: 0.3s;
 }
 
-/* EXTRA */
-.extra {
-  text-align: right;
-  font-size: 13px;
-  color: #9ca3af;
-  margin-bottom: 15px;
-  cursor: pointer;
+.login-box input:focus {
+  outline: none;
+  border-color: #a3ff12;
+  box-shadow: 0 0 10px rgba(163,255,18,0.4);
 }
 
 /* BUTTON */
-.login-btn {
+.primary-btn {
   width: 100%;
-  padding: 12px;
+  padding: 14px;
   background: #a3ff12;
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
   font-weight: 600;
   cursor: pointer;
+  transition: 0.3s;
 }
 
-/* DIVIDER */
-.divider {
-  margin: 15px 0;
-  color: #6b7280;
+.primary-btn:hover {
+  background: #c7ff4d;
+  box-shadow: 0 0 20px rgba(163,255,18,0.6);
+  transform: translateY(-2px);
 }
 
-/* SOCIAL */
-.google-btn,
-.github-btn {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 10px;
-  border: 1px solid #374151;
-  background: #020617;
-  color: white;
-  cursor: pointer;
+.primary-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
-/* SIGNUP TEXT */
-.signup-text {
-  margin-top: 10px;
+/* SWITCH TEXT */
+.switch-text {
+  margin-top: 18px;
   font-size: 14px;
+  color: #9ca3af;
 }
 
-.signup-text span {
+.switch-text span {
   color: #a3ff12;
   cursor: pointer;
-}
-
-.login-container {
-  text-align: center;
-  padding: 40px 20px;
-  color: white;
-
-  /* 🔥 FIX NAVBAR GAP */
-  margin-top: 10px; /* small spacing only */
 }

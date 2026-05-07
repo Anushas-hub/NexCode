@@ -1,0 +1,177 @@
+.dashboard-nav {
+  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 70px;
+  right: 0;
+
+  background: rgba(11, 14, 20, 0.92);
+  backdrop-filter: blur(16px);
+
+  border-bottom: 1px solid rgba(163, 255, 18, 0.08);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 28px;
+
+  z-index: 1000;
+}
+
+/* LEFT */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-left .nav-item {
+  font-size: 14px;
+  font-weight: 500;
+  color: #94a3b8;
+
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.nav-left .nav-item:hover {
+  color: #ffffff;
+}
+
+/* CENTER */
+.nav-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* SEARCH */
+.dashboard-search {
+  width: 340px;
+  height: 40px;
+
+  background: #111522;
+
+  border: 1px solid rgba(163, 255, 18, 0.08);
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 14px;
+
+  transition: 0.2s ease;
+}
+
+.dashboard-search:hover {
+  border-color: rgba(163, 255, 18, 0.3);
+}
+
+.dashboard-search:focus-within {
+  border-color: #a3ff12;
+
+  box-shadow: 0 0 0 3px rgba(163, 255, 18, 0.08);
+}
+
+/* SEARCH ICON */
+.search-icon {
+  color: #6b7280;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+/* INPUT */
+.search-input {
+  width: 100%;
+
+  background: transparent;
+  border: none;
+  outline: none;
+
+  color: white;
+  font-size: 13px;
+}
+
+.search-input::placeholder {
+  color: #6b7280;
+}
+
+/* RIGHT */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  height: 100%;
+}
+
+/* TOGGLE */
+.toggle-btn {
+  width: 36px;
+  height: 36px;
+
+  border-radius: 10px;
+
+  background: #141925;
+
+  border: 1px solid rgba(255, 255, 255, 0.05);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #94a3b8;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+
+  flex-shrink: 0;
+}
+
+.toggle-btn:hover {
+  background: #1a2030;
+  color: white;
+}
+
+/* ACTIVE */
+.active-toggle {
+  background: rgba(163, 255, 18, 0.1);
+  border-color: rgba(163, 255, 18, 0.2);
+
+  color: #a3ff12;
+}
+
+/* PROFILE */
+.nav-profile {
+  width: 40px;
+  height: 40px;
+
+  border-radius: 50%;
+
+  background: linear-gradient(
+    135deg,
+    #a3ff12,
+    #7cffcb
+  );
+
+  color: #0b0e14;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+
+  flex-shrink: 0;
+}
+
+.nav-profile:hover {
+  transform: scale(1.06);
+}

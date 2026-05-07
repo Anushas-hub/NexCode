@@ -6,6 +6,7 @@ function LoginPage() {
   const navigate = useNavigate();
 
   const [form, setForm] = useState({
+    username: "",
     email: "",
     password: ""
   });
@@ -13,12 +14,15 @@ function LoginPage() {
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value.trim()
+    });
   };
 
   const handleLogin = async () => {
-    if (!form.email || !form.password) {
-      alert("All fields are required ⚠️");
+    if (!form.username || !form.email || !form.password) {
+      alert("All fields required ⚠️");
       return;
     }
 
@@ -35,26 +39,16 @@ function LoginPage() {
 
       const data = await res.json();
 
-      if (res.status === 200) {
-        alert("Login successful 🚀");
-
-        // 🔥 SMART USERNAME HANDLING
-        const existingUsername = localStorage.getItem("username");
-
-        const finalUsername =
-          data.username || existingUsername || "User";
-
-        localStorage.setItem("username", finalUsername);
-        localStorage.setItem("isNewUser", "false");
-
+      if (res.ok) {
+        localStorage.setItem("username", data.username);
         navigate("/dashboard");
       } else {
-        alert(data.error || "Login failed ❌");
+        alert(data?.non_field_errors?.[0] || "Invalid credentials ❌");
       }
 
     } catch (err) {
       console.error(err);
-      alert("Server not reachable ❌");
+      alert("Server error ❌");
     }
 
     setLoading(false);
@@ -62,10 +56,15 @@ function LoginPage() {
 
   return (
     <div className="login-container">
-
       <h1>Log <span>In</span></h1>
 
       <div className="login-box">
+
+        <input
+          name="username"
+          placeholder="Username"
+          onChange={handleChange}
+        />
 
         <input
           name="email"
@@ -81,14 +80,14 @@ function LoginPage() {
         />
 
         <button
-          className="login-btn"
+          className="primary-btn"
           onClick={handleLogin}
           disabled={loading}
         >
           {loading ? "Logging in..." : "Log In"}
         </button>
 
-        <p className="signup-text">
+        <p className="switch-text">
           Don’t have an account?
           <span onClick={() => navigate("/signup")}> Sign up</span>
         </p>

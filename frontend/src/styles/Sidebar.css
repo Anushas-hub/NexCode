@@ -1,65 +1,78 @@
 .sidebar {
-  width: 220px;
+  width: 70px;
   height: 100vh;
-  background: #020617;
-  border-right: 1px solid #1f2937;
-  padding: 20px;
-  color: white;
+
+  background: #0b0e14;
+
   position: fixed;
+  top: 0;
+  left: 0;
+
+  border-right: 1px solid rgba(163, 255, 18, 0.08);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding-top: 18px;
+
+  z-index: 1200;
 }
 
-.logo {
-  color: #a3ff12;
-  margin-bottom: 30px;
-}
-
-.menu div {
-  padding: 10px;
-  margin-bottom: 10px;
+/* LOGO */
+.brand-box {
   cursor: pointer;
-  border-radius: 8px;
+
+  margin-bottom: 52px;
 }
 
-.menu div:hover {
-  background: #0B0E14;
-}
-.sidebar {
-  width: 220px;
-  background: #0B0E14;
-  height: 100vh;
-  position: fixed;
-  padding: 20px;
-  border-right: 1px solid rgba(255,255,255,0.05);
+.brand-img {
+  width: 38px;
+  height: 38px;
+
+  border-radius: 10px;
+
+  object-fit: cover;
 }
 
-/* 🔥 LOGO STYLE */
-.sidebar-logo {
+/* NAV */
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+/* ITEM */
+.nav-item {
+  width: 44px;
+  height: 44px;
+
+  border-radius: 12px;
+
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+
   cursor: pointer;
-  margin-bottom: 30px;
+
+  color: #94a3b8;
+
+  transition: all 0.2s ease;
 }
 
-.sidebar-logo img {
-  width: 35px;
-  height: 35px;
-  border-radius: 8px;
-}
+/* HOVER */
+.nav-item:hover {
+  background: #131926;
 
-.sidebar-logo span {
-  color: #9eff00;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.menu div {
-  margin: 15px 0;
-  cursor: pointer;
   color: white;
-  transition: 0.2s;
 }
 
-.menu div:hover {
-  color: #9eff00;
+/* ACTIVE */
+.nav-item.active {
+  background: rgba(163, 255, 18, 0.12);
+
+  color: #a3ff12;
+
+  box-shadow: 0 0 12px rgba(163, 255, 18, 0.08);
 }

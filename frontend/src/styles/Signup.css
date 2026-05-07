@@ -1,134 +1,81 @@
-
 .signup-container {
   text-align: center;
-  padding: 40px 20px;
+  padding: 80px 20px;
   color: white;
+  background: linear-gradient(135deg, #0B0E14, #111827);
+  min-height: 100vh;
 }
 
 .signup-container h1 {
-  font-size: 42px;
+  font-size: 48px;
+  margin-bottom: 30px;
 }
 
 .signup-container span {
   color: #a3ff12;
 }
 
-.subtitle {
-  color: #9ca3af;
-  margin-bottom: 30px;
-}
-
-/* 🔥 BOX */
+/* GLASS BOX */
 .signup-box {
-  background: #0B0E14;
-  border: 1px solid rgba(255,255,255,0.1);
-  padding: 30px;
-  border-radius: 15px;
-  width: 400px;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(163, 255, 18, 0.2);
+  padding: 40px;
+  border-radius: 18px;
+  width: 420px;
   margin: auto;
+  box-shadow: 0 0 40px rgba(163,255,18,0.05);
 }
 
-/* 🔥 INPUTS */
+/* INPUTS */
 .signup-box input {
   width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
-  border-radius: 10px;
-  border: 1px solid #374151;
+  padding: 14px;
+  margin-bottom: 18px;
+  border-radius: 12px;
+  border: 1px solid #1f2937;
   background: #020617;
   color: white;
+  transition: 0.3s;
 }
 
-/* 🔥 NAME ROW */
-.name-row {
-  display: flex;
-  gap: 10px;
+.signup-box input:focus {
+  outline: none;
+  border-color: #a3ff12;
+  box-shadow: 0 0 10px rgba(163,255,18,0.4);
 }
 
-/* 🔥 TERMS */
-.terms {
-  display: flex;
-  align-items: center;   /* 🔥 vertically align */
-  gap: 8px;              /* 🔥 space kam kar diya */
-  font-size: 13px;
-  color: #9ca3af;
-  margin-bottom: 15px;
-  justify-content: flex-start; /* 🔥 left align */
-}
-.terms input {
-  width: 14px;
-  height: 14px;
-  cursor: pointer;
-}
-.terms span {
-  line-height: 1.2;
-}
-
-/* 🔥 BUTTON */
-.create-btn {
+/* BUTTON */
+.primary-btn {
   width: 100%;
-  padding: 12px;
+  padding: 14px;
   background: #a3ff12;
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
   font-weight: 600;
   cursor: pointer;
+  transition: 0.3s;
 }
 
-/* 🔥 DIVIDER */
-.divider {
-  margin: 15px 0;
-  color: #6b7280;
+.primary-btn:hover {
+  background: #c7ff4d;
+  box-shadow: 0 0 20px rgba(163,255,18,0.6);
+  transform: translateY(-2px);
 }
 
-/* 🔥 SOCIAL BUTTONS */
-.google-btn,
-.github-btn {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 10px;
-  border: 1px solid #374151;
-  background: #020617;
-  color: white;
-  cursor: pointer;
+.primary-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
-/* 🔥 LOGIN TEXT */
-.login-text {
-  margin-top: 10px;
+/* SWITCH TEXT */
+.switch-text {
+  margin-top: 18px;
   font-size: 14px;
+  color: #9ca3af;
 }
 
-.login-text span {
+.switch-text span {
   color: #a3ff12;
   cursor: pointer;
-}
-
-/* 🔥 BOTTOM FEATURES */
-.bottom-features {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  margin-top: 50px;
-  flex-wrap: wrap;
-}
-
-.feature-box {
-  width: 250px;
-  padding: 20px;
-  background: #0B0E14;
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 12px;
-  text-align: left;
-}
-
-.feature-box h4 {
-  margin-bottom: 8px;
-  color: #a3ff12;
-}
-
-.feature-box p {
-  font-size: 13px;
-  color: #9ca3af;
 }
